@@ -1,12 +1,20 @@
 {
+<<<<<<< HEAD
   "name": "myvue",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "llnana <lllnana@qq.com>",
+=======
+  "name": "project4",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "叼烟的猫 <793845047@qq.com>",
+>>>>>>> e0c7fc10e34252d6240c562cb9b8b93da6c685cf
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
+<<<<<<< HEAD
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
@@ -17,11 +25,22 @@
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.5.1"
+=======
+    "build": "node build/build.js"
+  },
+  "dependencies": {
+    "element-ui": "^2.13.2",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1"
+>>>>>>> e0c7fc10e34252d6240c562cb9b8b93da6c685cf
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
+<<<<<<< HEAD
     "babel-eslint": "^8.2.1",
+=======
+>>>>>>> e0c7fc10e34252d6240c562cb9b8b93da6c685cf
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -32,6 +51,7 @@
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+<<<<<<< HEAD
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -41,6 +61,8 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
+=======
+>>>>>>> e0c7fc10e34252d6240c562cb9b8b93da6c685cf
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",

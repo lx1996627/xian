@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # myvue
+=======
+# project4
+>>>>>>> e0c7fc10e34252d6240c562cb9b8b93da6c685cf
 
 > A Vue.js project
 

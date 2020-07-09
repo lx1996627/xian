@@ -10,6 +10,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+<<<<<<< HEAD
     proxyTable: {//代理
       '/api': {
         target:'http://172.16.2.56:8888/',
@@ -19,6 +20,9 @@ module.exports = {
         }
       }
     },
+=======
+    proxyTable: {},
+>>>>>>> e0c7fc10e34252d6240c562cb9b8b93da6c685cf
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -28,6 +32,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
+<<<<<<< HEAD
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and
     // linting errors and warnings will be shown in the console.
@@ -36,6 +41,9 @@ module.exports = {
     // in the browser.
     showEslintErrorsInOverlay: false,
 
+=======
+    
+>>>>>>> e0c7fc10e34252d6240c562cb9b8b93da6c685cf
     /**
      * Source Maps
      */

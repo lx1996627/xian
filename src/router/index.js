@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../components/home.vue'
 import Search from "../components/search.vue"
+import changepage from "../components/changepage/page.vue"
+import goodsdetail from '../views/goodsdetail.vue'
 
 
 
@@ -17,6 +19,16 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: Search
+  },
+  {
+    path: '/changepage',
+    name: 'changepage',
+    component: changepage
+  },
+  {
+    path: '/goodsdetail',
+    name: 'goodsdetail',
+    component: goodsdetail
   },
 
 ]

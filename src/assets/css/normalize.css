@@ -421,6 +421,12 @@ button[disabled], input[disabled] {
   cursor: default;
 }
 
+/* 去除button点击后出现的蓝色边框 */
+
+button:focus {
+  outline: 0;
+}
+
 img {
   border: none;
 }
@@ -463,6 +469,10 @@ ul, ol, li {
 
 .color000 {
   color: #000;
+}
+
+.colorF {
+  color: #FFF;
 }
 
 .colorPink {

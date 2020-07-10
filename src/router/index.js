@@ -4,6 +4,7 @@ import Home from '../components/home.vue'
 import Search from "../components/search.vue"
 import changepage from "../components/changepage/page.vue"
 import goodsdetail from '../views/goodsdetail.vue'
+import Header from '../components/header.vue'
 
 
 
@@ -14,6 +15,11 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/header',
+    name: 'Header',
+    component: Header
   },
   {
     path: '/search',

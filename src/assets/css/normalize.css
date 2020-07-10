@@ -508,8 +508,3 @@ ul, ol, li {
 /**
  * element-ui的全局设置
  */
-
-.element-container {
-  width: 1200px;
-  margin: 0 auto;
-}

@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-    <el-container>
-      <!-- 头部区域 -->
-      <el-header class="header-container">
-        <div class="header-left floatleft">
-          <div class="logo"></div>
-        </div>
+    <!-- 头部区域 -->
+    <div class="header-container">
+      <div class="header-left floatleft">
+        <div class="logo"></div>
+      </div>
 
-        <search class="floatleft" @getQuery="getSearchedInfo"></search>
+      <search class="search floatleft" @getQuery="getSearchedInfo"></search>
 
-        <div class="header-right floatright">
-          <div>全国1小时达</div>
-          <div>低价折扣</div>
-          <div>退赔服务</div>
-        </div>
-      </el-header>
-    </el-container>
+      <div class="header-right floatright">
+        <div>全国1小时达</div>
+        <div>低价折扣</div>
+        <div>退赔服务</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -26,7 +24,7 @@ export default {
   name: "heading",
   //注册组件 然后在实例中引用
   components: {
-    Search,
+    Search
   },
   created() {},
   data() {
@@ -35,17 +33,11 @@ export default {
     };
   },
 
-  // props: {
-  //   queryInfo: {
-  //     type: String,
-  //   },
-  // },
-
   methods: {
     //根据关键字提交$axios搜索请求
     async getSearchedInfo(queryInfo) {
       const { data: res } = await this.$axios.get("/search", {
-        params: queryInfo,
+        params: queryInfo
       });
       // console.log(res)
       // console.log(res.meta.status)
@@ -54,8 +46,8 @@ export default {
       }
       console.log(res.data);
       this.searchedResult = res.data;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -64,7 +56,7 @@ export default {
 .header-container {
   width: 1200px;
   height: 110px;
-  margin: 20px auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,13 +68,15 @@ export default {
     background: url(../../assets/img/logo2.png) no-repeat center;
   }
   .header-right {
+    width: 400px;
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
     div {
       padding-left: 40px;
-      padding-right: 30px;
+      // padding-right: 30px;
       height: 30px;
+
       font-size: 14px;
       line-height: 30px;
     }
@@ -102,6 +96,9 @@ export default {
       background-repeat: no-repeat;
       background-position: 0 -65px;
     }
+  }
+  .search {
+    margin-left: 100px;
   }
 }
 </style>

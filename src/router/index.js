@@ -1,16 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../components/home.vue'
+import home from '../components/home.vue'
 import changepage from "../components/changepage/page.vue"
 import goodsdetail from '../views/goodsdetail.vue'
+import mainpage from '../components/mainpage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/home',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: home
+  },
+  {
+    path: '/mainpage',
+    name: 'mainpage',
+    component: mainpage,
+    // children: [
+    //   { path: '/freshflower', component: freshflower },
+    //   { path: '/dryflower', component: dryflower },
+    //   { path: '/gift', component: gift },
+    //   { path: '/weeklyflower', component: weeklyflower },
+    //   { path: '/flowerlanguage', component: flowerlanguage },
+    //   { path: '/grouppurchase', component: grouppurchase },
+    //   { path: '/shoppingcart', component: shoppingcart },
+    //   { path: '/loginpage', component: loginpage },
+    // ]
   },
   {
     path: '/changepage',

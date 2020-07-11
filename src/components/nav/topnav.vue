@@ -4,39 +4,45 @@
       <el-collapse v-model="activeNames" class="sidedropdown">
         <!-- <div class="toggle-button bgPink colorF cursor" @click="toggleCollapse">
           <span></span> 鲜花导购
-        </div> -->
+        </div>-->
 
-        <el-collapse-item class="menu " @click="toggleCollapse" name="collapse">
-          <span
-            class="collapse-title toggle-button bgPink colorF cursor"
-            slot="title"
-            >鲜花导购</span
-          >
+        <el-collapse-item class="menu" @click="toggleCollapse" name="collapse">
+          <span class="collapse-title toggle-button bgPink colorF cursor" slot="title">鲜花导购</span>
           <!-- 两层菜单，用两层for循环  -->
           <!-- 一级菜单 -->
           <div class="submenu" v-for="item in menuList" :key="item.id">
             <div>{{ item.authName }}</div>
             <!-- 二级菜单 给菜单开启vue-router模式 以index作为path进行跳转-->
             <div class="subitemwrap">
-              <div
-                class="subitem"
-                v-for="subItem in item.children"
-                :key="subItem.id"
-              >
-                <a href="">{{ subItem.authName }}</a>
+              <div class="subitem" v-for="subItem in item.children" :key="subItem.id">
+                <a class="subtitle" href>{{ subItem.authName }}</a>
               </div>
             </div>
           </div>
         </el-collapse-item>
       </el-collapse>
       <ul class="colorGrey">
-        <li><a href="">首页</a></li>
-        <li><a href="">鲜花</a></li>
-        <li><a href="">永生花</a></li>
-        <li><a href="">礼品</a></li>
-        <li><a href="">每周一花</a></li>
-        <li><a href="">花语</a></li>
-        <li><a href="">企业团购</a></li>
+        <li>
+          <a href>首页</a>
+        </li>
+        <li>
+          <a href>鲜花</a>
+        </li>
+        <li>
+          <a href>永生花</a>
+        </li>
+        <li>
+          <a href>礼品</a>
+        </li>
+        <li>
+          <a href>每周一花</a>
+        </li>
+        <li>
+          <a href>花语</a>
+        </li>
+        <li>
+          <a href>企业团购</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -61,39 +67,39 @@ export default {
               id: 111,
               authName: "爱情鲜花",
               path: "/flowerusage",
-              children: [],
+              children: []
             },
             {
               id: 112,
               authName: "生日鲜花",
               path: "/flowerusage",
-              children: [],
+              children: []
             },
             {
               id: 113,
               authName: "友情鲜花",
               path: "/flowerusage",
-              children: [],
+              children: []
             },
             {
               id: 114,
               authName: "周年纪念",
               path: "/flowerusage",
-              children: [],
+              children: []
             },
             {
               id: 115,
               authName: "婚庆鲜花",
               path: "/flowerusage",
-              children: [],
+              children: []
             },
             {
               id: 116,
               authName: "祝贺鲜花",
               path: "/flowerusage",
-              children: [],
-            },
-          ],
+              children: []
+            }
+          ]
         },
         {
           id: 102,
@@ -104,39 +110,39 @@ export default {
               id: 121,
               authName: "玫瑰花",
               path: "/flowermaterial",
-              children: [],
+              children: []
             },
             {
               id: 122,
               authName: "康乃馨",
               path: "/flowermaterial",
-              children: [],
+              children: []
             },
             {
               id: 123,
               authName: "百合花",
               path: "/flowermaterial",
-              children: [],
+              children: []
             },
             {
               id: 124,
               authName: "向日葵",
               path: "/flowermaterial",
-              children: [],
+              children: []
             },
             {
               id: 125,
               authName: "紫罗兰",
               path: "/flowermaterial",
-              children: [],
+              children: []
             },
             {
               id: 126,
               authName: "满天星",
               path: "/flowermaterial",
-              children: [],
-            },
-          ],
+              children: []
+            }
+          ]
         },
         {
           id: 103,
@@ -147,39 +153,39 @@ export default {
               id: 131,
               authName: "日常花束",
               path: "/flowertype",
-              children: [],
+              children: []
             },
             {
               id: 132,
               authName: "创意花盒",
               path: "/flowertype",
-              children: [],
+              children: []
             },
             {
               id: 133,
               authName: "韩式花束",
               path: "/flowertype",
-              children: [],
+              children: []
             },
             {
               id: 134,
               authName: "手提花篮",
               path: "/flowertype",
-              children: [],
+              children: []
             },
             {
               id: 135,
               authName: "开业花篮",
               path: "/flowertype",
-              children: [],
+              children: []
             },
             {
               id: 136,
               authName: "会议桌花",
               path: "/flowertype",
-              children: [],
-            },
-          ],
+              children: []
+            }
+          ]
         },
         {
           id: 104,
@@ -190,55 +196,55 @@ export default {
               id: 141,
               authName: "150元以内",
               path: "/flowerprice",
-              children: [],
+              children: []
             },
             {
               id: 142,
               authName: "150-199元",
               path: "/flowerprice",
-              children: [],
+              children: []
             },
             {
               id: 143,
               authName: "200-249元",
               path: "/flowerprice",
-              children: [],
+              children: []
             },
             {
               id: 144,
               authName: "250-399元",
               path: "/flowerprice",
-              children: [],
+              children: []
             },
             {
               id: 145,
               authName: "400-499元",
               path: "/flowerprice",
-              children: [],
+              children: []
             },
             {
               id: 146,
               authName: "500-599元",
               path: "/flowerprice",
-              children: [],
+              children: []
             },
             {
               id: 147,
               authName: "600-699元",
               path: "/flowerprice",
-              children: [],
+              children: []
             },
             {
               id: 148,
               authName: "700元以上",
               path: "/flowerprice",
-              children: [],
-            },
-          ],
-        },
+              children: []
+            }
+          ]
+        }
       ],
       //是否折叠 false是不折叠
-      isCollapsed: false,
+      isCollapsed: false
     };
   },
   methods: {
@@ -261,11 +267,11 @@ export default {
     //菜单的折叠与展开
     toggleCollapse() {
       this.isCollapsed = !this.isCollapsed;
-    },
+    }
   },
   created() {
     // this.getSidebarMenu();
-  },
+  }
 };
 </script>
 
@@ -329,9 +335,12 @@ export default {
     //   overflow: hidden;
     // }
   }
+  .subtitle {
+    font-size: 14px;
+  }
   .submenu {
     height: 100px;
-    font-size: 14px;
+    // font-size: 16px;
     font-weight: 700;
     color: #333333;
     padding: 20px;

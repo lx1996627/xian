@@ -371,19 +371,19 @@ a {
 }
 
 a:link {
-  color: #fff;
+  color: #555555;
 }
 
 a:visited {
-  color: #fff;
+  color: #555555;
 }
 
 a:hover {
-  color: #fff;
+  color: #DD977C;
 }
 
 a:active {
-  color: #fff;
+  color: #555555;
 }
 
 input::-ms-clear {

@@ -51,7 +51,7 @@ export default {
 .searchBtn {
   height: 45px;
   width: 85px;
-  background-image: url(../assets/img/dl-xian-search.png);
+  background-image: url(../../assets/img/dl-xian-search.png);
   background-repeat: no-repeat;
   background-position: 15px center;
   border-top-right-radius: 20px;

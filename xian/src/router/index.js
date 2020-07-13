@@ -5,6 +5,9 @@ import changepage from "../components/changepage/page.vue";
 import goodsdetail from "../views/goodsdetail.vue";
 import mainpage from "../components/mainpage.vue";
 import footer from "../components/Footer/footer";
+import loginpage from "../components/pages/loginpage.vue";
+import login from "../components/loginregist/login.vue";
+import rightbar from "../components/pageitems/rightbar.vue";
 import ArticleComment from "../components/ArticleComment/ArticleComment";
 
 Vue.use(VueRouter);
@@ -29,6 +32,16 @@ const routes = [
     //   { path: '/shoppingcart', component: shoppingcart },
     //   { path: '/loginpage', component: loginpage },
     // ]
+    children: [
+      //   { path: '/freshflower', component: freshflower },
+      //   { path: '/dryflower', component: dryflower },
+      //   { path: '/gift', component: gift },
+      //   { path: '/weeklyflower', component: weeklyflower },
+      //   { path: '/flowerlanguage', component: flowerlanguage },
+      //   { path: '/grouppurchase', component: grouppurchase },
+      //   { path: '/shoppingcart', component: shoppingcart },
+      { path: "login", component: loginpage },
+    ],
   },
   {
     path: "/changepage",
@@ -138,6 +151,16 @@ const routes = [
         },
       },
     ],
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: login,
+  },
+  {
+    path: "/rightbar",
+    name: "rightbar",
+    component: rightbar,
   },
 ];
 

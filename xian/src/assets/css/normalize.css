@@ -371,19 +371,19 @@ a {
 }
 
 a:link {
-  color: #fff;
+  color: #555555;
 }
 
 a:visited {
-  color: #fff;
+  color: #555555;
 }
 
 a:hover {
-  color: #fff;
+  color: #DD977C;
 }
 
 a:active {
-  color: #fff;
+  color: #555555;
 }
 
 input::-ms-clear {
@@ -421,6 +421,12 @@ button[disabled], input[disabled] {
   cursor: default;
 }
 
+/* 去除button点击后出现的蓝色边框 */
+
+button:focus {
+  outline: 0;
+}
+
 img {
   border: none;
 }
@@ -431,8 +437,17 @@ ul, ol, li {
 
 /*公共方法*/
 
-.clear {
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
   clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
 }
 
 .clearleft {
@@ -463,6 +478,10 @@ ul, ol, li {
 
 .color000 {
   color: #000;
+}
+
+.colorF {
+  color: #FFF;
 }
 
 .colorPink {

@@ -92,9 +92,9 @@
         <div class="grid-content bg-purple-light" style="margin-left:30px;border:1px solid black">
           <div>
             <el-tabs v-model="activeName" @tab-click="handleClick">
-              <el-tab-pane label="商品详情" name="first">用户管理</el-tab-pane>
-              <el-tab-pane label="用户评价(781)" name="second">配置管理</el-tab-pane>
-              <el-tab-pane label="购物保障" name="third">角色管理</el-tab-pane>
+              <el-tab-pane label="商品详情" name="first"></el-tab-pane>
+              <el-tab-pane label="用户评价(781)" name="second"></el-tab-pane>
+              <el-tab-pane label="购物保障" name="third"></el-tab-pane>
             </el-tabs>
           </div>
           <div>

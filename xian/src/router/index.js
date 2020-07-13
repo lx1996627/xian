@@ -1,4 +1,3 @@
-
 import Vue from "vue";
 import VueRouter from "vue-router";
 import home from "../components/home.vue";
@@ -6,9 +5,7 @@ import changepage from "../components/changepage/page.vue";
 import goodsdetail from "../views/goodsdetail.vue";
 import mainpage from "../components/mainpage.vue";
 import footer from "../components/Footer/footer";
-import loginpage from '../components/pages/loginpage.vue'
-import login from "../components/loginregist/login.vue"
-import rightbar from '../components/pageitems/rightbar.vue'
+import ArticleComment from "../components/ArticleComment/ArticleComment";
 
 Vue.use(VueRouter);
 
@@ -22,16 +19,16 @@ const routes = [
     path: "/mainpage",
     name: "mainpage",
     component: mainpage,
-    children: [
-      //   { path: '/freshflower', component: freshflower },
-      //   { path: '/dryflower', component: dryflower },
-      //   { path: '/gift', component: gift },
-      //   { path: '/weeklyflower', component: weeklyflower },
-      //   { path: '/flowerlanguage', component: flowerlanguage },
-      //   { path: '/grouppurchase', component: grouppurchase },
-      //   { path: '/shoppingcart', component: shoppingcart },
-      { path: 'login', component: loginpage }
-    ]
+    // children: [
+    //   { path: '/freshflower', component: freshflower },
+    //   { path: '/dryflower', component: dryflower },
+    //   { path: '/gift', component: gift },
+    //   { path: '/weeklyflower', component: weeklyflower },
+    //   { path: '/flowerlanguage', component: flowerlanguage },
+    //   { path: '/grouppurchase', component: grouppurchase },
+    //   { path: '/shoppingcart', component: shoppingcart },
+    //   { path: '/loginpage', component: loginpage },
+    // ]
   },
   {
     path: "/changepage",
@@ -48,6 +45,17 @@ const routes = [
     name: "footer",
     component: footer,
   },
+  {
+    path: "/ArticleComment",
+    name: "ArticleComment",
+    component: ArticleComment,
+  },
+  {
+    path: "/Cart",
+    name: "Cart",
+    component: () => import("../components/Cart/cart"),
+  },
+  
   {
     path: "/VipPerson",
     name: "VipPerson",
@@ -68,6 +76,14 @@ const routes = [
       {
         path: "PayAgain",
         component: () => import("../components/PayAgain/PayAgain.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
+      {
+        path: "MyOrder",
+        component: () => import("../components/MyOrder/MyOrder.vue"),
         meta: {
           // 路由元信息，可以自定义
           requireAuth: true,
@@ -97,20 +113,33 @@ const routes = [
           requireAuth: true,
         },
       },
+      {
+        path: "PersonalCen",
+        component: () => import("../components/PersonalCen/PersonalCen.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
+      {
+        path: "MyCollect",
+        component: () => import("../components/MyCollect/MyCollect.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
+      {
+        path: "MyAppraise",
+        component: () => import("../components/MyAppraise/MyAppraise.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
     ],
   },
 ];
-  //   path: '/login',
-  //   name: 'login',
-  //   component: login
-  // },
-  // {
-  //   path: '/rightbar',
-  //   name: 'rightbar',
-  //   component: rightbar
-  // },
-
-
 
 //挂载路由导航守卫
 //要访问的路径，从哪个路径跳转过来，回调函数 next()放行  next(url)强制跳转

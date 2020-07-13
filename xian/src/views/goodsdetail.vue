@@ -89,18 +89,13 @@
         <div class="grid-content bg-purple"></div>
       </el-col>
       <el-col :span="18" style="height:500px">
-        <div class="grid-content bg-purple-light" style="margin-left:30px;border:1px solid black">
+        <div class="grid-content bg-purple-light" style="margin-left:30px;">
           <div>
-            <el-tabs v-model="activeName" @tab-click="handleClick">
-              <el-tab-pane label="商品详情" name="first"></el-tab-pane>
-              <el-tab-pane label="用户评价(781)" name="second"></el-tab-pane>
-              <el-tab-pane label="购物保障" name="third"></el-tab-pane>
+            <el-tabs v-model="activeName" @tab-click="handleClick" class="elTabs">
+              <el-tab-pane style="font-size:24px" label="商品详情" name="first"></el-tab-pane>
+              <el-tab-pane style="font-size:24px" label="用户评价(781)" name="second"></el-tab-pane>
+              <el-tab-pane style="font-size:24px" label="购物保障" name="third"></el-tab-pane>
             </el-tabs>
-          </div>
-          <div>
-            <!-- <el-row>
-              <el-col :span="12" v-for="item in goodsdetail.goodsinf" :key="item"><div class="grid-content bg-purple goodsInf">{{item}}</div></el-col>
-            </el-row> -->
           </div>
           <div>
             <div v-for="item in goodsPic" :key="item.url" ><img :src="item.url" style="width:100%" alt=""></div>
@@ -263,5 +258,9 @@ ul li {
   height: 30px;
   line-height: 30px;
   border-bottom:1px solid gray ;
+}
+::deep.el-tabs .el-tab-pane{
+  color: red;
+  background: red;
 }
 </style>

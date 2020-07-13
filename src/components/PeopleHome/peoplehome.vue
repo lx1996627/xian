@@ -1,0 +1,154 @@
+<template>
+  <div class="peoplehome">
+    <div class="top">
+      <div class="left">
+        <el-upload
+          class="avatar-uploader"
+          action="https://jsonplaceholder.typicode.com/posts/"
+          :show-file-list="false"
+          :on-success="handleAvatarSuccess"
+          :before-upload="beforeAvatarUpload"
+        >
+          <img v-if="imageUrl" :src="imageUrl" class="avatar headImg" />
+          <el-button size="small" type="primary" class="uploadBtn">头像上传</el-button>
+        </el-upload>
+        <div class="self-info">
+          <div class="vip-level">vip0</div>
+          <p>余额：0.00</p>
+          <p>积分：0</p>
+          <p>优惠卷：0 张</p>
+        </div>
+      </div>
+      <div class="right">
+        <div>
+          <img src="../../assets/images/dfk.png" alt />
+          <p>
+            <a href>待付款</a>
+          </p>
+        </div>
+        <div>
+          <img src="../../assets/images/jrps.png" alt />
+          <p>
+            <a href>今日配送</a>
+          </p>
+        </div>
+        <div>
+          <img src="../../assets/images/dpj.png" alt />
+          <p>
+            <a href>待评价</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="mycollect">
+      <h3>我的收藏</h3>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      imageUrl: ""
+    };
+  },
+  methods: {
+    handleAvatarSuccess(res, file) {
+      this.imageUrl = URL.createObjectURL(file.raw);
+    },
+    beforeAvatarUpload(file) {
+      const isJPG = file.type === "image/jpeg";
+      const isLt2M = file.size / 1024 / 1024 < 2;
+
+      if (!isJPG) {
+        this.$message.error("上传头像图片只能是 JPG 格式!");
+      }
+      if (!isLt2M) {
+        this.$message.error("上传头像图片大小不能超过 2MB!");
+      }
+      return isJPG && isLt2M;
+    }
+  }
+};
+</script>
+
+<style lang="less">
+.member-home {
+  padding-top: 50px;
+  border: 1px solid rgb(229, 229, 229);
+  .top {
+    display: flex;
+    justify-content: space-around;
+    .left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 300px;
+      overflow: hidden;
+      .avatar-uploader {
+        height: 200px;
+      }
+      .avatar-uploader .el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 100px;
+        border: 1px solid;
+        .uploadBtn {
+          position: absolute;
+          bottom: -25%;
+          left: 25%;
+        }
+      }
+      .self-info {
+        div,
+        p {
+          margin: 10px 0;
+        }
+        .vip-level {
+          width: 50px;
+          height: 30px;
+          border-radius: 15px;
+          background-color: green;
+          color: white;
+          text-align: center;
+          line-height: 30px;
+        }
+      }
+    }
+    .right {
+      padding-top: 50px;
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      div {
+        display: inline-block;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color: red;
+      }
+    }
+  }
+  hr {
+    width: 90%;
+    margin: 20px auto 0;
+    border-color: rgb(229, 229, 229);
+  }
+  .mycollect {
+    width: 100%;
+    padding: 10px 44px;
+    height: 200px;
+    box-sizing: border-box;
+  }
+}
+</style>

@@ -1,21 +1,22 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import home from '../components/home.vue'
-import changepage from "../components/changepage/page.vue"
-import goodsdetail from '../views/goodsdetail.vue'
-import mainpage from '../components/mainpage.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import home from "../components/home.vue";
+import changepage from "../components/changepage/page.vue";
+import goodsdetail from "../views/goodsdetail.vue";
+import mainpage from "../components/mainpage.vue";
+import footer from "../components/Footer/footer";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/home',
-    name: 'home',
-    component: home
+    path: "/home",
+    name: "home",
+    component: home,
   },
   {
-    path: '/mainpage',
-    name: 'mainpage',
+    path: "/mainpage",
+    name: "mainpage",
     component: mainpage,
     // children: [
     //   { path: '/freshflower', component: freshflower },
@@ -29,17 +30,72 @@ const routes = [
     // ]
   },
   {
-    path: '/changepage',
-    name: 'changepage',
-    component: changepage
+    path: "/changepage",
+    name: "changepage",
+    component: changepage,
   },
   {
-    path: '/goodsdetail',
-    name: 'goodsdetail',
-    component: goodsdetail
+    path: "/goodsdetail",
+    name: "goodsdetail",
+    component: goodsdetail,
   },
-
-]
+  {
+    path: "/footer",
+    name: "footer",
+    component: footer,
+  },
+  {
+    path: "/VipPerson",
+    name: "VipPerson",
+    component: () => import("../views/VipPerson.vue"),
+    meta: {
+      // 路由元信息，可以自定义
+      requireAuth: true,
+    },
+    children: [
+      {
+        path: "/",
+        component: () => import("../components/PeopleHome/peoplehome.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
+      {
+        path: "PayAgain",
+        component: () => import("../components/PayAgain/PayAgain.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
+      {
+        path: "coupon",
+        component: () => import("../components/Coupon/coupon.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
+      {
+        path: "Consignee",
+        component: () => import("../components/Consignee/Consignee.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
+      {
+        path: "changepwd",
+        component: () => import("../components/ChangePwd/changepwd.vue"),
+        meta: {
+          // 路由元信息，可以自定义
+          requireAuth: true,
+        },
+      },
+    ],
+  },
+];
 
 //挂载路由导航守卫
 //要访问的路径，从哪个路径跳转过来，回调函数 next()放行  next(url)强制跳转
@@ -54,7 +110,7 @@ const routes = [
 // })
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

@@ -15,7 +15,7 @@
 </script>
 <style scoped>
   .hotTitle{
-  margin-top: 64px;
+  margin-top: 60px;
   margin-bottom: 22px;
 }
   .hotTitle span{

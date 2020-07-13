@@ -1,15 +1,22 @@
 <template>
   <div id="app">
-    <hotFlower></hotFlower>
+<!--    <huaYu></huaYu>-->
+    <weekHua></weekHua>
   </div>
 </template>
 
 <script>
-  import hotFlower from "./components/huayu/hotFlower";
+  // import huaYu from "./components/huayu/huaYu";
+  import weekHua from "./components/weekHua/weekHua";
+
 export default {
   name: 'App',
+  data(){
+    return {}
+  },
   components:{
-    hotFlower:hotFlower
+  //   huaYu:huaYu,
+    weekHua:weekHua
   }
 }
 </script>

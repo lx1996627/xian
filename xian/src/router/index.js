@@ -1,4 +1,4 @@
-<<<<<<< HEAD:src/router/index.js
+
 import Vue from "vue";
 import VueRouter from "vue-router";
 import home from "../components/home.vue";
@@ -6,17 +6,9 @@ import changepage from "../components/changepage/page.vue";
 import goodsdetail from "../views/goodsdetail.vue";
 import mainpage from "../components/mainpage.vue";
 import footer from "../components/Footer/footer";
-=======
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import home from '../components/home.vue'
-import changepage from "../components/changepage/page.vue"
-import goodsdetail from '../views/goodsdetail.vue'
-import mainpage from '../components/mainpage.vue'
 import loginpage from '../components/pages/loginpage.vue'
 import login from "../components/loginregist/login.vue"
 import rightbar from '../components/pageitems/rightbar.vue'
->>>>>>> newxian:vue/src/router/index.js
 
 Vue.use(VueRouter);
 
@@ -52,7 +44,6 @@ const routes = [
     component: goodsdetail,
   },
   {
-<<<<<<< HEAD:src/router/index.js
     path: "/footer",
     name: "footer",
     component: footer,
@@ -109,19 +100,17 @@ const routes = [
     ],
   },
 ];
-=======
-    path: '/login',
-    name: 'login',
-    component: login
-  },
-  {
-    path: '/rightbar',
-    name: 'rightbar',
-    component: rightbar
-  },
+  //   path: '/login',
+  //   name: 'login',
+  //   component: login
+  // },
+  // {
+  //   path: '/rightbar',
+  //   name: 'rightbar',
+  //   component: rightbar
+  // },
 
-]
->>>>>>> newxian:vue/src/router/index.js
+
 
 //挂载路由导航守卫
 //要访问的路径，从哪个路径跳转过来，回调函数 next()放行  next(url)强制跳转

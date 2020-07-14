@@ -27,7 +27,7 @@ export default {
 
 <style >
 @import "../../assets/css/normalize.css";
-.el-pagination1:hover{
+：：deep.el-pagination1:hover{
     background: #77cb7f;
     font-size: 20px;
 }

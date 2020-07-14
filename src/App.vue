@@ -15,7 +15,7 @@ export default {
     return {}
   },
   components:{
-  //   huaYu:huaYu,
+    // huaYu:huaYu,
     weekHua:weekHua
   }
 }

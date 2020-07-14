@@ -3,13 +3,13 @@
     <el-row>
       <el-col :span="12" style="width:470px">
         <div class="grid-content bg-purple gl470" style="border:1px solid #dcdcdc">
-          <img src="../assets/img/goods/goods-test1.1.jpg" style="width:100%;" alt="详情页大图" />
+          <img src="{{src[1].url}}" style="width:100%;" alt="详情页大图" />
         </div>
         <el-row :gutter="18" class="goods-small">
           <div v-for="item in src" :key="item.url">
             <el-col :span="6">
               <div class="grid-content bg-purple">
-                <img :src="item.url" style="width:90%;margin-top:20px" alt="详情页大图" />
+                <img :src="item.url" @click="changeImg(scope.$index)" style="width:90%;margin-top:20px" alt="详情页大图" />
               </div>
             </el-col>
           </div>
@@ -168,9 +168,30 @@ export default {
     handleChange(value) {
       console.log(value);
     },
-     handleClick(tab, event) {
+    handleClick(tab, event) {
         console.log(tab, event);
-      }
+    },
+    changeImg(index){
+
+    }
+  },
+  created () {
+    var str = location.href;
+    var num = str.indexOf("=");
+    str = str.substr(num+1);
+    str = Number(str);
+    this.axios
+        .post("/pay/xiangqing",{
+            payId:str,
+        }) 
+        .then(res => { 
+          console.log(res.data)
+          this.loading=false
+        })
+        .catch(err => {
+          return err;
+          
+        })
   },
   computed: {
     // goodsdetail(){

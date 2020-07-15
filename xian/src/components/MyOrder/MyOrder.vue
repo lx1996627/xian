@@ -124,7 +124,7 @@ export default {
   methods: {
     ...mapState(["setSrc"]),
     getOrders() {
-      this.axios({
+      this.$axios({
         method: "POST",
         url: "/order/getOrder",
         data: {
@@ -144,7 +144,7 @@ export default {
         });
     },
     getlist() {
-      this.axios({
+      this.$axios({
         method: "POST",
         url: "/order/getlist",
         data: {
@@ -160,7 +160,7 @@ export default {
         });
     },
     getTotal() {
-      this.axios({
+      this.$axios({
         method: "POST",
         url: "/order/getTotal",
         data: {

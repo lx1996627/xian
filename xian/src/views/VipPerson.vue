@@ -1,6 +1,6 @@
 <template>
   <div class="member-center">
-    <Nav />
+    <!-- <Nav /> -->
     <div class="member-body">
       <div class="bread-nav">
         <el-breadcrumb separator-class="el-icon-arrow-right">
@@ -117,7 +117,6 @@
 <script>
 import foter from "../components/Footer/footer";
 // import Nav from "../components/Nav";
-// import Footer from "../components/Footer";
 // import { mapState, mapMutations } from "vuex";
 
 export default {

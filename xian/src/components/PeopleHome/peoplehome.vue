@@ -7,9 +7,11 @@
           action="https://jsonplaceholder.typicode.com/posts/"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
+          :on-remove="handleRemove"
           :before-upload="beforeAvatarUpload"
         >
-          <img v-if="imageUrl" :src="imageUrl" class="avatar headImg" />
+          <!-- action填写的是后台的接口地址 -->
+          <img v-if="imageUrl" :src="imageUrl" style="width:150px;height:150px;border-radius:50%" />
           <el-button size="small" type="primary" class="uploadBtn">头像上传</el-button>
         </el-upload>
         <div class="self-info">
@@ -55,20 +57,31 @@ export default {
     };
   },
   methods: {
+    // 移除图片
+    handleRemove() {
+      this.imageUrl = "";
+    },
+
+    // 上传成功回调
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);
     },
-    beforeAvatarUpload(file) {
-      const isJPG = file.type === "img/jpeg";
-      const isLt2M = file.size / 1024 / 1024 < 2;
 
-      if (!isJPG) {
-        this.$message.error("上传头像图片只能是 JPG 格式!");
+    // 上传前格式和图片大小限制
+    beforeAvatarUpload(file) {
+      const type =
+        file.type === "image/jpeg" ||
+        "image/jpg" ||
+        "image/webp" ||
+        "image/png";
+      const isLt2M = file.size / 1024 / 1024 < 2;
+      if (!type) {
+        this.$message.error("图片格式不正确!(只能包含jpg，png，webp，JPEG)");
       }
       if (!isLt2M) {
-        this.$message.error("上传头像图片大小不能超过 2MB!");
+        this.$message.error("上传图片大小不能超过 2MB!");
       }
-      return isJPG && isLt2M;
+      return type && isLt2M;
     }
   }
 };

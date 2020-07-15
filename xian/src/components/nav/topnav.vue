@@ -26,7 +26,7 @@
           <a href>首页</a>
         </li>
         <li>
-          <a href="#/mainpage">鲜花</a>
+          <a href>鲜花</a>
         </li>
         <li>
           <a href>永生花</a>
@@ -256,7 +256,7 @@ export default {
 
     //  async getSidebarMenu() {
     //     // console.log('获取左侧边栏')
-    //     let { data } = await this.$axios.get("/freshmenus");
+    //     let { data } = await this.$axios.get("/menus");
     //     console.log(data.data);
     //     console.log(data.meta);
     //     if (data.meta.status !== 200)

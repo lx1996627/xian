@@ -83,7 +83,8 @@
               <el-button @click="goCart">加入购物车</el-button>
             </el-form-item>
             <el-form-item>
-              <img src="../assets/img/goods/bx.png" alt />
+              <el-button>立即抢购</el-button>
+              <el-button>加入购物车</el-button>
             </el-form-item>
           </el-form>
         </div>
@@ -374,16 +375,14 @@ export default {
 
 .goodsdetails {
   width: 1200px;
-  margin: 0 54px;
+  margin: 0 100px;
   vertical-align: middle;
-}
-.el-form-item {
-  margin-top: 22px;
 }
 
 .gr670 {
   width: 670px;
-  /* border: 1px solid black ; */
+  height: 900px;
+  border: 1px solid black;
 }
 .gr670-tag > div {
   width: 71px;
@@ -401,7 +400,7 @@ export default {
   color: #777;
 }
 
-.goods-small .el-col img:hover {
+.goods-small .el-col img {
   border: black 1px solid;
 }
 .goodsdetail-btn .el-button {

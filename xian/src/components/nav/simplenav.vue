@@ -3,7 +3,7 @@
     <div class="wrapper clearfix">
       <ul class="nav1 floatright">
         <li>
-          <a href="#/home">首页</a>
+          <a href>首页</a>
         </li>
         <li>
           <a href>鲜花</a>
@@ -62,7 +62,7 @@ export default {
     li {
       padding: 0 26px;
       font-size: 14px;
-      /* font-weight: 700; */
+      font-weight: 700;
       line-height: 25px;
       /* position: absolute; */
     }

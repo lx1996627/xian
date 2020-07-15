@@ -22,16 +22,6 @@ const routes = [
     path: "/mainpage",
     name: "mainpage",
     component: mainpage,
-    // children: [
-    //   { path: '/freshflower', component: freshflower },
-    //   { path: '/dryflower', component: dryflower },
-    //   { path: '/gift', component: gift },
-    //   { path: '/weeklyflower', component: weeklyflower },
-    //   { path: '/flowerlanguage', component: flowerlanguage },
-    //   { path: '/grouppurchase', component: grouppurchase },
-    //   { path: '/shoppingcart', component: shoppingcart },
-    //   { path: '/loginpage', component: loginpage },
-    // ]
     children: [
       //   { path: '/freshflower', component: freshflower },
       //   { path: '/dryflower', component: dryflower },
@@ -64,11 +54,31 @@ const routes = [
     component: ArticleComment,
   },
   {
+    path: "/Car",
+    name: "Car",
+    component: () => import("../views/Car.vue"),
+  },
+  {
+    path: "/CartPage",
+    name: "CartPage",
+    component: () => import("../components/testV/CartPage.vue"),
+  },
+  {
+    path: "/Order",
+    name: "Order",
+    component: () => import("../views/Order.vue"),
+  },
+  {
     path: "/Cart",
     name: "Cart",
     component: () => import("../components/Cart/cart"),
   },
-  
+  {
+    path: "/info",
+    name: "info",
+    component: () => import("../components/testV/info.vue"),
+  },
+
   {
     path: "/VipPerson",
     name: "VipPerson",
@@ -178,6 +188,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,
+  mode: "history",
 });
 
 export default router;

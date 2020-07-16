@@ -30,8 +30,8 @@ app.use(bodyParser.json(
 //cookie session配置 监听端口之前 使用路由之前
 app.use(cookieParser()); //方便对cookie进行解析
 app.use(session({  //服务器配置session的规则，然后通过session设置浏览器的cookie
-    name: "xianjia", //服务器设置cookie时给cookie的名字 也有默认名字，可以不填
-    secret: 'xianjia', //密钥 对cookie签名，安全，防止其他人伪造cookie
+    name: "xian", //服务器设置cookie时给cookie的名字 也有默认名字，可以不填
+    secret: 'xian', //密钥 对cookie签名，安全，防止其他人伪造cookie
     cookie: {
         maxAge: 1000 * 60 * 15,
         //cookie有效时间，单位是毫秒 

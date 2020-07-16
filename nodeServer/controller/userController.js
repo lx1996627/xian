@@ -4,6 +4,16 @@ const userController = {
 
     //验证用户名和密码是否正确
     checkUserPost(req, res) {
+<<<<<<< HEAD
+        console.log('====================================');
+        console.log("controller收到checkUser路由任务");
+        console.log('====================================');
+        console.log(req.body)
+        var { username, password } = req.body;
+        // console.log(username);
+        // console.log(password);
+        //var limitFlag = 0; //0代表无权登陆
+=======
         // console.log('====================================');
         console.log("controller收到路由任务");
         // console.log('====================================');
@@ -13,6 +23,7 @@ const userController = {
         console.log(password);
         //var limitFlag = 0; //0代表无权登陆
 
+>>>>>>> c851c4a371023da4bbfa6dc3f7ef616bfc0eca7e
         dbPool.connection("SELECT * FROM users WHERE userName=? AND userPassword=?", [username, password], (err, data) => {
             // console.log(err)
             // console.log(data)
@@ -49,6 +60,21 @@ const userController = {
     },
 
     // 如果需要注册，验证用户名是否可用
+<<<<<<< HEAD
+    userAvailable(req, res) {
+        // console.log('====================================');
+        // console.log(req.body);
+        // console.log('====================================');
+        let { username } = req.body;
+        dbPool.connection('select * from users where userName=?', [username], (err, data) => {
+            if (!err) {
+                // console.log(data.length);
+                if (data.length > 0) {
+                    res.send('手机号已注册')
+                }
+                else {
+                    res.send('手机号可用')
+=======
     regist(req, res) {
         // console.log('====================================');
         // console.log(req.query.username);
@@ -62,6 +88,7 @@ const userController = {
                 }
                 else {
                     res.send('用户名可用')
+>>>>>>> c851c4a371023da4bbfa6dc3f7ef616bfc0eca7e
                 }
             }
             else {
@@ -71,6 +98,24 @@ const userController = {
     },
 
     //如果id存在 修改老用户 如果id不存在 添加新用户 
+<<<<<<< HEAD
+    regist(req, res) {
+        console.log('进入添加注册用户controller');
+        console.log(req.body);
+        let { username, password } = req.body;
+        console.log(username, password);
+
+        //  把数据写进数据库
+        dbPool.connection('insert into users(userName, userPassword) values(?,?)',
+            [username, password],
+            (err, data) => {
+                console.log(data || 'data不存在');
+                console.log(err || 'err不存在');
+                if (err) { res.send(err) }
+                //token判断登陆状态
+                var token = 'nocsdnc2132r2321312r434324r' //模拟token
+                res.json({ data, meta: { msg: '用户创建成功', state: 201, token } });
+=======
     addNew(req, res) {
         console.log('进入添加用户函数');
         console.log(req.body);
@@ -89,6 +134,7 @@ const userController = {
 
                 if (err) { res.send(err) }
                 res.json({ data, meta: { msg: '用户创建成功', status: 201 } });
+>>>>>>> c851c4a371023da4bbfa6dc3f7ef616bfc0eca7e
             })
     },
 

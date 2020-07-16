@@ -4,7 +4,7 @@
     <div class="wrap nav">
       <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-top:20px">
         <el-breadcrumb-item :to="{ path: '/' }">鲜家首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/membercenter' }">会员中心</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/VipPerson' }">会员中心</el-breadcrumb-item>
         <el-breadcrumb-item>支付订单</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
@@ -93,13 +93,13 @@
                     <div id="SD_content">
                       <div class="order-address-frm">
                         <el-form ref="form" :model="form" label-width="100px">
-                          <el-form-item label="收货人姓名">
+                          <el-form-item label="收货人姓名:">
                             <el-input v-model="form.name" placeholder="请输入收货人姓名"></el-input>
                           </el-form-item>
-                          <el-form-item label="收货人电话">
+                          <el-form-item label="收货人电话:">
                             <el-input v-model="form.telphone" placeholder="请输入收货人电话"></el-input>
                           </el-form-item>
-                          <el-form-item label="配送地区">
+                          <el-form-item label="配送地区:">
                             <v-distpicker
                               :province="user.xtrysf"
                               :city="user.xtrycs"
@@ -111,7 +111,7 @@
                               placeholder="请输入配送地区"
                             ></v-distpicker>
                           </el-form-item>
-                          <el-form-item label="配送地址">
+                          <el-form-item label="配送地址:">
                             <el-input v-model="form.address" placeholder="请输入收货人地址"></el-input>
                           </el-form-item>
                           <el-form-item>
@@ -162,7 +162,7 @@
       </table>
       <div class="h400"></div>
       <div class="payment">
-        <label class="left input-label" style="width:95px">选择支付方式</label>
+        <label class="left input-label" style="width:95px">选择支付方式:</label>
         <div class="left" style="width:630px">
           <ul class="payment_list clearfix">
             <li class="active">

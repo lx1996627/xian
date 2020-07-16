@@ -7,15 +7,28 @@
         </div>-->
 
         <el-collapse-item class="menu" @click="toggleCollapse" name="collapse">
-          <span class="collapse-title toggle-button bgPink colorF cursor" slot="title">鲜花导购</span>
+          <span
+            class="collapse-title toggle-button bgPink colorF cursor"
+            slot="title"
+            >鲜花导购</span
+          >
           <!-- 两层菜单，用两层for循环  -->
           <!-- 一级菜单 -->
           <div class="submenu" v-for="item in menuList" :key="item.id">
             <div>{{ item.authName }}</div>
             <!-- 二级菜单 给菜单开启vue-router模式 以index作为path进行跳转-->
             <div class="subitemwrap">
-              <div class="subitem" v-for="subItem in item.children" :key="subItem.id">
-                <a class="subtitle" href>{{ subItem.authName }}</a>
+              <div
+                class="subitem"
+                v-for="subItem in item.children"
+                :key="subItem.id"
+              >
+                <a
+                  class="subtitle"
+                  :href="subItem.path"
+                  @click.prevent.self="getNavInfo(subItem.authName)"
+                  >{{ subItem.authName }}</a
+                >
               </div>
             </div>
           </div>
@@ -26,7 +39,7 @@
           <a href>首页</a>
         </li>
         <li>
-          <a href>鲜花</a>
+          <a href="/mainpage">鲜花</a>
         </li>
         <li>
           <a href>永生花</a>
@@ -55,6 +68,7 @@ export default {
   data() {
     return {
       msg: "Welcome to topnav",
+
       activeNames: "collapse",
       //左侧边栏菜单
       menuList: [
@@ -66,40 +80,28 @@ export default {
             {
               id: 111,
               authName: "爱情鲜花",
-              path: "/flowerusage",
-              children: []
+              path: "/sidebar",
+              children: [],
             },
             {
               id: 112,
               authName: "生日鲜花",
-              path: "/flowerusage",
-              children: []
+              path: "/sidebar",
+              children: [],
             },
             {
               id: 113,
               authName: "友情鲜花",
-              path: "/flowerusage",
-              children: []
+              path: "/sidebar",
+              children: [],
             },
             {
               id: 114,
               authName: "周年纪念",
-              path: "/flowerusage",
-              children: []
+              path: "/sidebar",
+              children: [],
             },
-            {
-              id: 115,
-              authName: "婚庆鲜花",
-              path: "/flowerusage",
-              children: []
-            },
-            {
-              id: 116,
-              authName: "祝贺鲜花",
-              path: "/flowerusage",
-              children: []
-            }
-          ]
+          ],
         },
         {
           id: 102,
@@ -110,39 +112,27 @@ export default {
               id: 121,
               authName: "玫瑰花",
               path: "/flowermaterial",
-              children: []
+              children: [],
             },
             {
               id: 122,
               authName: "康乃馨",
               path: "/flowermaterial",
-              children: []
+              children: [],
             },
             {
               id: 123,
               authName: "百合花",
               path: "/flowermaterial",
-              children: []
+              children: [],
             },
             {
               id: 124,
               authName: "向日葵",
               path: "/flowermaterial",
-              children: []
+              children: [],
             },
-            {
-              id: 125,
-              authName: "紫罗兰",
-              path: "/flowermaterial",
-              children: []
-            },
-            {
-              id: 126,
-              authName: "满天星",
-              path: "/flowermaterial",
-              children: []
-            }
-          ]
+          ],
         },
         {
           id: 103,
@@ -153,39 +143,27 @@ export default {
               id: 131,
               authName: "日常花束",
               path: "/flowertype",
-              children: []
+              children: [],
             },
             {
               id: 132,
               authName: "创意花盒",
               path: "/flowertype",
-              children: []
+              children: [],
             },
             {
               id: 133,
               authName: "韩式花束",
               path: "/flowertype",
-              children: []
+              children: [],
             },
             {
               id: 134,
               authName: "手提花篮",
               path: "/flowertype",
-              children: []
+              children: [],
             },
-            {
-              id: 135,
-              authName: "开业花篮",
-              path: "/flowertype",
-              children: []
-            },
-            {
-              id: 136,
-              authName: "会议桌花",
-              path: "/flowertype",
-              children: []
-            }
-          ]
+          ],
         },
         {
           id: 104,
@@ -196,55 +174,31 @@ export default {
               id: 141,
               authName: "150元以内",
               path: "/flowerprice",
-              children: []
+              children: [],
             },
             {
               id: 142,
               authName: "150-199元",
               path: "/flowerprice",
-              children: []
+              children: [],
             },
             {
               id: 143,
               authName: "200-249元",
               path: "/flowerprice",
-              children: []
+              children: [],
             },
             {
               id: 144,
               authName: "250-399元",
               path: "/flowerprice",
-              children: []
+              children: [],
             },
-            {
-              id: 145,
-              authName: "400-499元",
-              path: "/flowerprice",
-              children: []
-            },
-            {
-              id: 146,
-              authName: "500-599元",
-              path: "/flowerprice",
-              children: []
-            },
-            {
-              id: 147,
-              authName: "600-699元",
-              path: "/flowerprice",
-              children: []
-            },
-            {
-              id: 148,
-              authName: "700元以上",
-              path: "/flowerprice",
-              children: []
-            }
-          ]
-        }
+          ],
+        },
       ],
       //是否折叠 false是不折叠
-      isCollapsed: false
+      isCollapsed: false,
     };
   },
   methods: {
@@ -256,7 +210,7 @@ export default {
 
     //  async getSidebarMenu() {
     //     // console.log('获取左侧边栏')
-    //     let { data } = await this.$axios.get("/menus");
+    //     let { data } = await this.$axios.get("/freshmenus");
     //     console.log(data.data);
     //     console.log(data.meta);
     //     if (data.meta.status !== 200)
@@ -264,20 +218,26 @@ export default {
     //     this.menuList = data.data;
     //   },
 
+    //点击二级菜单，发起请求
+    async getNavInfo(authName) {
+      let { data: res } = await this.$axios.get("/sidebar?que= " + authName);
+
+      console.log(res);
+    },
+
     //菜单的折叠与展开
     toggleCollapse() {
       this.isCollapsed = !this.isCollapsed;
-    }
+    },
   },
   created() {
     // this.getSidebarMenu();
-  }
+  },
 };
 </script>
 
 <style lang="less" scoped>
 .headnav {
-  // background-color: red;
   width: 1200px;
   height: 40px;
   position: relative;
@@ -319,28 +279,12 @@ export default {
     background-image: url(../../assets/img/dl-xian-nav.png);
     background-repeat: no-repeat;
     background-position: 50px center;
-    // span {
-    //   position: absolute;
-    //   left: 60px;
-    //   top: 14px;
-    //   width: 20px;
-    //   height: 20px;
-    //   // vertical-align: middle;
-    //   // margin: -5px 10px 0 0;
-    //   background-image: url(../../assets/img/dl-xian-nav.png);
-    //   background-repeat: no-repeat;
-    // }
-    // .menu {
-    //   height: 100px ;
-    //   overflow: hidden;
-    // }
   }
   .subtitle {
     font-size: 14px;
   }
   .submenu {
     height: 100px;
-    // font-size: 16px;
     font-weight: 700;
     color: #333333;
     padding: 20px;

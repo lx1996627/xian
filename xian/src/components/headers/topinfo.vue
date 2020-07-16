@@ -17,7 +17,7 @@
             <a href>我的订单</a>
           </div>
           <div>
-            <a href>登陆/注册</a>
+            <a href="/mainpage/login">登陆/注册</a>
           </div>
           <div>
             <a class="shopping" href>
@@ -37,11 +37,11 @@ export default {
   name: "vueName",
   data() {
     return {
-      msg: "Welcome to your vueName"
+      msg: "Welcome to your vueName",
     };
   },
   methods: {},
-  created() {}
+  created() {},
 };
 </script>
 

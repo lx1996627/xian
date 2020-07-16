@@ -5,10 +5,12 @@ import changepage from "../components/changepage/page.vue";
 import goodsdetail from "../views/goodsdetail.vue";
 import mainpage from "../components/mainpage.vue";
 import footer from "../components/Footer/footer";
-import loginpage from "../components/pages/loginpage.vue";
-import login from "../components/loginregist/login.vue";
+import loginpage from '../views/loginpage.vue'
+import login from "../components/loginregist/login.vue"
 import rightbar from "../components/pageitems/rightbar.vue";
-import ArticleComment from "../components/ArticleComment/ArticleComment";
+// import ArticleComment from "../components/ArticleComment/ArticleComment";
+import topnav from "../components/nav/topnav.vue";
+
 
 Vue.use(VueRouter);
 
@@ -48,11 +50,11 @@ const routes = [
     name: "footer",
     component: footer,
   },
-  {
-    path: "/ArticleComment",
-    name: "ArticleComment",
-    component: ArticleComment,
-  },
+  // {
+  //   path: "/ArticleComment",
+  //   name: "ArticleComment",
+  //   component: ArticleComment,
+  // },
   {
     path: "/Car",
     name: "Car",
@@ -171,6 +173,10 @@ const routes = [
     path: "/rightbar",
     name: "rightbar",
     component: rightbar,
+  }, {
+    path: "/topnav",
+    name: "topnav",
+    component: topnav,
   },
 ];
 

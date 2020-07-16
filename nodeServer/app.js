@@ -14,8 +14,6 @@ const app = express();  //没有用new，是隐藏了
 
 //express配置
 //日志模块，记录每次请求信息，并在调试台看到 最好放在最前面
-//app.use（路径/可不写/默认根目录/针对所有请求  回调函数/重点是怎么处理） 中间件
-//app.use放在所有的路径处理之前，即在之前把所有的端口该处理的都处理了
 app.use(logger('dev'));
 
 //创建application/x-www-form-urlencoded解析
@@ -59,13 +57,13 @@ app.all('*', function (req, res, next) {
 app.use(router);
 
 //设置静态资源路径
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 //如果没有匹配到上述的静态资源路径和路由路径，就执行404
-app.use((req, res, next) => {
-    //next(createError(404));   //next交给下一下中间件处理，即下一个app.use
-    res.redirect('404.html') //我们写的简单的404页面
-});
+// app.use((req, res, next) => {
+//     //next(createError(404));   //next交给下一下中间件处理，即下一个app.use
+//     res.redirect('404.html') //我们写的简单的404页面
+// });
 
 
 app.set('port', 8888); //设置端口

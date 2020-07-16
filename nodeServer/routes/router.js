@@ -5,6 +5,7 @@ const userController = require('../controller/userController');
 const menuController = require('../controller/menuController');
 const navController = require('../controller/navController');
 
+const detailController = require('../controller/detailController');
 // 常见的4种请求 get post put delete 请求
 //路由拦截请求，判断请求的类型 再进行任务分发
 
@@ -31,7 +32,17 @@ router.get('/gifthmenus', menuController.getGiftMenus);
 // ==============================首页导航栏模块==========================
 router.get('/sidebar', navController.getSideBar)
 
+//=================================左侧菜单栏模块=========================
+//获取菜单栏数据
+router.get('/menus', menuController.getMenus);
+
 //注销登陆
 // router.get('/logout.do', userController.logout)
+
+//=================================获取商品详情模块=========================
+//获取商品详情数据
+router.get('/detail', detailController.getGoodsdetail);
+//加入购物车
+router.get('/addCar', detailController.addCar);
 
 module.exports = router;

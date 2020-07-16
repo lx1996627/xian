@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="12" style="width:470px">
         <div class="grid-content bg-purple gl470" style="border:1px solid #dcdcdc">
-          <img src="../assets/img/goods/goods-test1.1.jpg" style="width:100%;" alt="详情页大图" />
+          <img :src="bigpic" style="width:100%;" alt="详情页大图" />
         </div>
         <el-row :gutter="18" class="goods-small">
           <div v-for="(item,index) in src" :key="item.url">
@@ -94,7 +94,7 @@
       <el-col :span="6" style="height:500px">
         <div class="grid-content bg-purple">
           <div class="wl277">
-			<!--
+            <!--
 
 
 
@@ -228,187 +228,324 @@
 	</div>
 </div>
 <div class="h25"></div>
--->
+            -->
 
+            <div class="ad-red-rose">
+              <a href="/xianhua/">
+                <img src="//www.xian.com/upload/system/2019-08/09/186ce_6ad8.jpg" width="277" />
+              </a>
+              <div class="h10"></div>
+            </div>
 
-<div class="ad-red-rose">
-	
-	<a href="/xianhua/"><img src="//www.xian.com/upload/system/2019-08/09/186ce_6ad8.jpg" width="277"></a>
-	<div class="h10"></div>
-</div>
+            <div class="evaluate-r">
+              <div class="evaluate-r-title">24小时热销榜</div>
+              <div class="evaluate-r-con">
+                <ul>
+                  <li>
+                    <a href="/xianhua/44678.html" title="爱你久久·99枝红玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/29c71_56ec.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/29c71_56ec.jpg"
+                      />
+                      <p>爱你久久·99枝红玫瑰纯美花束</p>
+                      <p>
+                        <span>￥558.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45017.html" title="想念你的味道·33枝红玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/282cb_15cbd.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/282cb_15cbd.jpg"
+                      />
+                      <p>想念你的味道·33枝红玫瑰纯美花束</p>
+                      <p>
+                        <span>￥338.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45059.html" title="爱情密码·13枝红玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/2612b_1752e.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/2612b_1752e.jpg"
+                      />
+                      <p>爱情密码·13枝红玫瑰纯美花束</p>
+                      <p>
+                        <span>￥178.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45641.html" title="情意绵绵·9枝红玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/1b3a4_a316.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/1b3a4_a316.jpg"
+                      />
+                      <p>情意绵绵·9枝红玫瑰纯美花束</p>
+                      <p>
+                        <span>￥138.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45045.html" title="让我守护你·19枝粉玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/2744a_12ef5.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/2744a_12ef5.jpg"
+                      />
+                      <p>让我守护你·19枝粉玫瑰纯美花束</p>
+                      <p>
+                        <span>￥198.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/44694.html" title="长相厮守·66枝红玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/29b06_e279.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/29b06_e279.jpg"
+                      />
+                      <p>长相厮守·66枝红玫瑰纯美花束</p>
+                      <p>
+                        <span>￥448.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45020.html" title="远方的守候·12枝粉康乃馨纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/28045_d49f.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/28045_d49f.jpg"
+                      />
+                      <p>远方的守候·12枝粉康乃馨纯美花束</p>
+                      <p>
+                        <span>￥138.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/44877.html" title="撩动我的心·33枝粉玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/298ea_29d4.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/298ea_29d4.jpg"
+                      />
+                      <p>撩动我的心·33枝粉玫瑰纯美花束</p>
+                      <p>
+                        <span>￥358.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45061.html" title="浪漫的故事·13枝香槟玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/260fe_14ac4.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/260fe_14ac4.jpg"
+                      />
+                      <p>浪漫的故事·13枝香槟玫瑰纯美花束</p>
+                      <p>
+                        <span>￥178.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45647.html" title="携手未来·11枝香槟玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/19c9e_34ec.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/19c9e_34ec.jpg"
+                      />
+                      <p>携手未来·11枝香槟玫瑰纯美花束</p>
+                      <p>
+                        <span>￥138.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45635.html" title="我爱你·3枝红玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/1b5b3_9123.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/1b5b3_9123.jpg"
+                      />
+                      <p>我爱你·3枝红玫瑰纯美花束</p>
+                      <p>
+                        <span>￥88.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="/xianhua/45049.html" title="把心交给我·19枝红玫瑰纯美花束">
+                      <img
+                        data-lazy="//www.xian.com/upload/image/2019-06/14/273cb_eafb.jpg"
+                        alt
+                        src="//www.xian.com/upload/image/2019-06/14/273cb_eafb.jpg"
+                      />
+                      <p>把心交给我·19枝红玫瑰纯美花束</p>
+                      <p>
+                        <span>￥198.00</span>
+                        <span></span>
+                      </p>
+                    </a>
+                    <hr />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="h25"></div>
 
+            <div class="box box-rxxh">
+              <div class="box-bar">
+                <p class="box-bar-title">鲜花适合对象</p>
+              </div>
+              <div class="box-hot-con huayu-hot-label">
+                <ul class="clearfix">
+                  <li>
+                    <a href="/xianhua/lr/" title="送恋人">送恋人</a>
+                  </li>
+                  <li>
+                    <a href="/xianhua/py/" title="送朋友">送朋友</a>
+                  </li>
+                  <li>
+                    <a href="/xianhua/hm/" title="送亲人">送亲人</a>
+                  </li>
+                  <li>
+                    <a href="/xianhua/js/" title="送老师">送老师</a>
+                  </li>
+                  <li>
+                    <a href="/xianhua/zb/" title="送长辈">送长辈</a>
+                  </li>
+                  <li>
+                    <a href="/xianhua/kh/" title="送客户">送客户</a>
+                  </li>
+                  <li>
+                    <a href="/xianhua/br/" title="送病人">送病人</a>
+                  </li>
+                  <li>
+                    <a href="/xianhua/hualan/" title="送花篮">送花篮</a>
+                  </li>
+                  <li>
+                    <a href="/xianhua/zuohua/" title="送桌花">送桌花</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="h25"></div>
 
+            <div
+              class="autofixed"
+              fixed=".wr893"
+              style="width: 277px; top: 0px; background-color: rgb(255, 255, 255); overflow: hidden;"
+            >
+              <div class="box box-rxxh">
+                <div class="box-bar">
+                  <p class="box-bar-title">鲜花用途</p>
+                </div>
+                <div class="box-hot-con huayu-hot-label">
+                  <ul class="clearfix">
+                    <li>
+                      <a href="/xianhua/aq/" title="爱情鲜花">爱情鲜花</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/sr/" title="生日鲜花">生日鲜花</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/yq/" title="友情鲜花">友情鲜花</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/zn/" title="周年纪念">周年纪念</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/hq/" title="婚庆鲜花">婚庆鲜花</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/zh/" title="祝贺鲜花">祝贺鲜花</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/tb/" title="探病慰问">探病慰问</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/wh/" title="问候长辈">问候长辈</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/sw/" title="商务鲜花">商务鲜花</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/dq/" title="道歉鲜花">道歉鲜花</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="h25"></div>
 
-
-
-<div class="evaluate-r">
-	<div class="evaluate-r-title">24小时热销榜</div>
-	<div class="evaluate-r-con">
-		<ul>
-			
-			<li>
-				<a href="/xianhua/44678.html" title="爱你久久·99枝红玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/29c71_56ec.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/29c71_56ec.jpg">
-					<p>爱你久久·99枝红玫瑰纯美花束</p>
-					<p><span>￥558.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45017.html" title="想念你的味道·33枝红玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/282cb_15cbd.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/282cb_15cbd.jpg">
-					<p>想念你的味道·33枝红玫瑰纯美花束</p>
-					<p><span>￥338.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45059.html" title="爱情密码·13枝红玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/2612b_1752e.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/2612b_1752e.jpg">
-					<p>爱情密码·13枝红玫瑰纯美花束</p>
-					<p><span>￥178.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45641.html" title="情意绵绵·9枝红玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/1b3a4_a316.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/1b3a4_a316.jpg">
-					<p>情意绵绵·9枝红玫瑰纯美花束</p>
-					<p><span>￥138.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45045.html" title="让我守护你·19枝粉玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/2744a_12ef5.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/2744a_12ef5.jpg">
-					<p>让我守护你·19枝粉玫瑰纯美花束</p>
-					<p><span>￥198.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/44694.html" title="长相厮守·66枝红玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/29b06_e279.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/29b06_e279.jpg">
-					<p>长相厮守·66枝红玫瑰纯美花束</p>
-					<p><span>￥448.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45020.html" title="远方的守候·12枝粉康乃馨纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/28045_d49f.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/28045_d49f.jpg">
-					<p>远方的守候·12枝粉康乃馨纯美花束</p>
-					<p><span>￥138.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/44877.html" title="撩动我的心·33枝粉玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/298ea_29d4.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/298ea_29d4.jpg">
-					<p>撩动我的心·33枝粉玫瑰纯美花束</p>
-					<p><span>￥358.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45061.html" title="浪漫的故事·13枝香槟玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/260fe_14ac4.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/260fe_14ac4.jpg">
-					<p>浪漫的故事·13枝香槟玫瑰纯美花束</p>
-					<p><span>￥178.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45647.html" title="携手未来·11枝香槟玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/19c9e_34ec.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/19c9e_34ec.jpg">
-					<p>携手未来·11枝香槟玫瑰纯美花束</p>
-					<p><span>￥138.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45635.html" title="我爱你·3枝红玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/1b5b3_9123.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/1b5b3_9123.jpg">
-					<p>我爱你·3枝红玫瑰纯美花束</p>
-					<p><span>￥88.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-			<li>
-				<a href="/xianhua/45049.html" title="把心交给我·19枝红玫瑰纯美花束">
-					<img data-lazy="//www.xian.com/upload/image/2019-06/14/273cb_eafb.jpg" alt="" src="//www.xian.com/upload/image/2019-06/14/273cb_eafb.jpg">
-					<p>把心交给我·19枝红玫瑰纯美花束</p>
-					<p><span>￥198.00</span><span></span></p>
-				</a>
-				<hr>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="h25"></div>
-
-
-<div class="box box-rxxh">
-	<div class="box-bar"><p class="box-bar-title">鲜花适合对象</p></div>
-	<div class="box-hot-con huayu-hot-label">
-		<ul class="clearfix">
-			
-			<li><a href="/xianhua/lr/" title="送恋人">送恋人</a></li>
-			<li><a href="/xianhua/py/" title="送朋友">送朋友</a></li>
-			<li><a href="/xianhua/hm/" title="送亲人">送亲人</a></li>
-			<li><a href="/xianhua/js/" title="送老师">送老师</a></li>
-			<li><a href="/xianhua/zb/" title="送长辈">送长辈</a></li>
-			<li><a href="/xianhua/kh/" title="送客户">送客户</a></li>
-			<li><a href="/xianhua/br/" title="送病人">送病人</a></li>
-			<li><a href="/xianhua/hualan/" title="送花篮">送花篮</a></li>
-			<li><a href="/xianhua/zuohua/" title="送桌花">送桌花</a></li>
-		</ul>
-	</div>
-</div>
-<div class="h25"></div>
-
-
-<div class="autofixed" fixed=".wr893" style="width: 277px; top: 0px; background-color: rgb(255, 255, 255); overflow: hidden;">
-	<div class="box box-rxxh">
-		<div class="box-bar"><p class="box-bar-title">鲜花用途</p></div>
-		<div class="box-hot-con huayu-hot-label">
-			<ul class="clearfix">
-				
-				<li><a href="/xianhua/aq/" title="爱情鲜花">爱情鲜花</a></li>
-				<li><a href="/xianhua/sr/" title="生日鲜花">生日鲜花</a></li>
-				<li><a href="/xianhua/yq/" title="友情鲜花">友情鲜花</a></li>
-				<li><a href="/xianhua/zn/" title="周年纪念">周年纪念</a></li>
-				<li><a href="/xianhua/hq/" title="婚庆鲜花">婚庆鲜花</a></li>
-				<li><a href="/xianhua/zh/" title="祝贺鲜花">祝贺鲜花</a></li>
-				<li><a href="/xianhua/tb/" title="探病慰问">探病慰问</a></li>
-				<li><a href="/xianhua/wh/" title="问候长辈">问候长辈</a></li>
-				<li><a href="/xianhua/sw/" title="商务鲜花">商务鲜花</a></li>
-				<li><a href="/xianhua/dq/" title="道歉鲜花">道歉鲜花</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="h25"></div>
-
-	<div class="box box-rxxh">
-		<div class="box-bar"><p class="box-bar-title">鲜花销售价</p></div>
-		<div class="box-hot-con huayu-hot-label">
-			<ul class="clearfix">
-				
-				<li><a href="/xianhua/jg0/" title="-149">150元以内</a></li>
-				<li><a href="/xianhua/jg1/" title="150-199">150-199元</a></li>
-				<li><a href="/xianhua/jg2/" title="200-249">200-249元</a></li>
-				<li><a href="/xianhua/jg3/" title="250-399">250-399元</a></li>
-				<li><a href="/xianhua/jg4/" title="400-499">400-499元</a></li>
-				<li><a href="/xianhua/jg5/" title="500-599">500-599元</a></li>
-				<li><a href="/xianhua/jg6/" title="600-699">600-699元</a></li>
-				<li><a href="/xianhua/jg7/" title="700-100000">700元以上</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="h25"></div>
-</div>
-
-		</div>
+              <div class="box box-rxxh">
+                <div class="box-bar">
+                  <p class="box-bar-title">鲜花销售价</p>
+                </div>
+                <div class="box-hot-con huayu-hot-label">
+                  <ul class="clearfix">
+                    <li>
+                      <a href="/xianhua/jg0/" title="-149">150元以内</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/jg1/" title="150-199">150-199元</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/jg2/" title="200-249">200-249元</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/jg3/" title="250-399">250-399元</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/jg4/" title="400-499">400-499元</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/jg5/" title="500-599">500-599元</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/jg6/" title="600-699">600-699元</a>
+                    </li>
+                    <li>
+                      <a href="/xianhua/jg7/" title="700-100000">700元以上</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="h25"></div>
+            </div>
+          </div>
         </div>
       </el-col>
       <el-col :span="18">
@@ -601,7 +738,9 @@ export default {
       }
     },
     changeImg(index) {
-      console.log(index);
+      
+      this.bigpic=this.src[index].url ;
+      console.log(this.bigpic)
     },
     goCart() {
       this.$router.push({
@@ -659,6 +798,7 @@ export default {
     }
   },
   created() {
+    // this.bigpic=this.src[1].url;
     //  var goodsID=this.$route.params.goodsID;
     var goodsID = 2;
     this.$axios({
@@ -822,16 +962,16 @@ ul li {
   float: left;
 }
 .wl277 {
-    width: 277px;
-    /* float: left; */
+  width: 277px;
+  /* float: left; */
 }
 .wl277 .evaluate-r {
-    width: 275px;
-    float: none;
-    background-color: #f9f9f9;
+  width: 275px;
+  float: none;
+  background-color: #f9f9f9;
 }
 .evaluate-r .evaluate-r-con ul {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 </style>

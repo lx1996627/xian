@@ -47,24 +47,81 @@ const detailController = {
             }
         })
     },
-    getGoodsdetail(req, res) {
-        // console.log('====================================');
-        console.log("controller收到路由任务");
-        // console.log('====================================');
-        console.log(req)
-
-        //var limitFlag = 0; //0代表无权登陆
-
-        dbPool.connection("SELECT * FROM goods WHERE goodsID=?", [2], (err, data) => {
-            // console.log(err)
-            // console.log(data)
+    getGoodsdetail(req, res) { 
+        console.log(req.query);
+        let ID = req.query.goodsID;
+        dbPool.connection("SELECT * FROM goods WHERE goodsID = ? ", [ID], (err, data) => {
             if (err) {
                 res.send(err.message)
             }
             else {
                 res.json({ data, meta: { msg: '数据获取成功', status: 200 } });
+                console.log(data);
             }
         })
+    },
+    addCar(req, res) { 
+        // console.log(req.query);
+        let shopcar = ('3','w','s','500','1');
+        dbPool.connection("Insert into shopcar(goodsID,goodsName,goodsSrc,goodsPrice,goodsNum) values （？,？,？,？,？）", shopcar, (err, data) => {
+            if (err) {
+                res.send(err.message)
+            }
+            else {
+                res.json({ data, meta: { msg: '购物车添加成功', status: 200 } });
+            }
+        })
+    },
+     addMyAddress(req, resp) {
+                const S_Name = req.body.S_Name;
+                const Province = req.body.Province;
+                const City = req.body.City;
+                const Area = req.body.Area;
+                const Address = req.body.Address;
+                const Mail = req.body.Mail;
+                const Phone = req.body.Phone;
+                const Tel = req.body.Tel;
+                const Is_True = req.body.Is_True;
+                let sql;
+                if (Is_True) {
+                    sql += `update s_address set Is_True=0 where UId=${UId};`;
+                }
+                sql += ` INSERT INTO s_address 
+                                (
+                                UId, 
+                                S_Name, 
+                                Province, 
+                                City, 
+                                AREA, 
+                                Address, 
+                                Mail, 
+                                Phone, 
+                                Tel, 
+                                Is_True
+                                )
+                                VALUES
+                                (
+                                ${UId}, 
+                                ${S_Name}, 
+                                ${Province}, 
+                                ${City}, 
+                                ${Area}, 
+                                ${Address}, 
+                                ${Mail}, 
+                                ${Phone}, 
+                                ${Tel}, 
+                                ${Is_True}
+                                ); `
+                                
+                db.connect(sql, [], (err, data) => {
+                    result = new Result();
+                    if (err == null) {
+                        result.success = true; //返回成功
+                        // result.data = data;
+                        result.message = "" //成功描述
+                        resp.send(result)
+                    }
+                });
     },
 }
 module.exports = detailController;

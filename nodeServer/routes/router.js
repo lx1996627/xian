@@ -22,5 +22,7 @@ router.get('/menus', menuController.getMenus);
 //=================================获取商品详情模块=========================
 //获取商品详情数据
 router.get('/detail', detailController.getGoodsdetail);
+//加入购物车
+router.get('/addCar', detailController.addCar);
 
 module.exports = router;

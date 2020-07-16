@@ -2,7 +2,6 @@ const dbPool = require('../config/dbPoolConfig');
 
 const menuController = {
 
-<<<<<<< HEAD
     //获取鲜花菜单栏的数据
     getFreshMenus(req, res) {
         // console.log('====================================');
@@ -196,24 +195,12 @@ const menuController = {
                         }
                     ]
                 }
-=======
-    //获取菜单栏的数据
-    getMenus(req, res) {
-        // console.log('====================================');
-        console.log("controller收到路由任务");
-        // console.log('====================================');
-        console.log(req.query)
-
-        var menus = {
-            data: [
->>>>>>> c851c4a371023da4bbfa6dc3f7ef616bfc0eca7e
             ],
             meta: {
                 msg: '获取菜单列表成功',
                 status: 200
             }
         }
-<<<<<<< HEAD
         res.json(freshmenus)
     },
 
@@ -579,9 +566,5 @@ const menuController = {
         res.json(giftmenus)
     }
 
-=======
-        res.json(menus)
-    }
->>>>>>> c851c4a371023da4bbfa6dc3f7ef616bfc0eca7e
 }
 module.exports = menuController;
